@@ -1,0 +1,164 @@
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    display: grid;
+    grid-template-areas:
+    "Jumbotron Jumbotron"
+    "Tentang Pendidikan"
+    "Organisasi Keahlian"
+    "Gallery Gallery"
+    "Footer Footer";
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    background-color: rgb(56, 56, 56);
+    font-family: 'Lato', Helvetica, sans-serif;
+}
+
+section{
+    padding: 50px;
+    background-color: azure;
+}
+
+/* Jumbotron */
+.jumbotron{
+    grid-area: Jumbotron;
+    display: grid;
+    grid-template-areas:
+    "Hero Hero"
+    "Info Kontak";
+    grid-template-columns: 1fr 1fr;
+    justify-items:center;
+    background-color: rgb(56, 56, 56);
+    color: #ffeab5;
+    padding: 50px;
+}
+
+.jumbotron .hero{
+    grid-area: Hero;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.jumbotron .hero img{
+    width: 40%;
+    border: 3px solid #ffeab5;
+    border-radius: 50%;
+}
+
+/* .hero h3{
+    display: inline;
+} */
+
+.hero .text{
+    font-size: 1.1em;
+}
+
+.jumbotron .info{
+    grid-area: Info;
+}
+
+.info table{
+    border-spacing: 7px;
+}
+
+.jumbotron .kontak{
+    grid-area: Kontak;
+    margin-left: 10px;
+}
+
+li{
+    margin-bottom: 15px;
+}
+
+.judul{
+    display: inline-block;
+    width: 80%;
+    padding: 10px;
+    background-color: #ffeab5;
+}
+
+.gallery{
+    grid-area: Gallery;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 50px 100px;
+    justify-content: center;
+}
+
+.gallery h2{
+    width: 100%;
+    grid-column: 1 / -1;
+    text-align: center;
+    margin: 0 auto 25px;
+}
+
+.gallery img{
+    width: 20%;
+    margin: 10px 10px;
+}
+
+footer{
+    grid-area: Footer;
+    background-color: rgb(56, 56, 56);
+    text-align: center;
+    color: azure;
+}
+
+footer a{
+    text-decoration: none;
+    color: rgb(79, 220, 255);
+}
+
+/* Responsive Breakpoint */
+
+@media(max-width: 785px){
+    .jumbotron{
+        display: grid;
+        grid-template-areas:
+        "Hero"
+        "Info"
+        "Kontak";
+        grid-template-columns: 1fr;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .info{
+        justify-self: left;
+        margin-left: 10px;
+    }
+
+    .hero .text{
+        font-size: 1em;
+    }
+}
+
+@media(max-width: 550px){
+    .container{
+        grid-template-areas:
+        "Jumbotron"
+        "Tentang"
+        "Pendidikan"
+        "Organisasi"
+        "Keahlian"
+        "Gallery"
+        "Footer";
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+
+    .hero .text{
+        font-size: .9em;
+    }
+
+    .gallery{
+        padding: 25px;
+    }
+}
